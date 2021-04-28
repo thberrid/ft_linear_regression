@@ -1,3 +1,5 @@
 # ft_linear_regression
 
-https://en.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/regression-library/v/introduction-to-residuals-and-least-squares-regression
+install R : https://cran.r-project.org/bin/linux/ubuntu/
+
+Simply use `./training.r [data.csv]` then `./predict.r [value in km]`
