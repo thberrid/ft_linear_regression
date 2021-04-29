@@ -1,6 +1,5 @@
 #!/usr/bin/Rscript --save --no-restore
 
-
 normalize <- function(x, set){
 	x / (max(set) - min(set))
 }
@@ -10,6 +9,11 @@ unnormalize <- function(x, set){
 }
 
 args <-commandArgs(TRUE)
+if ((is.na(args[1]))){
+	cat("usage: ./training file.csv\n")
+	q()
+}
+
 datasCSV <- read.csv(args[1])
 
 X11()
@@ -46,8 +50,6 @@ while (1){
 cat("ok done, you can launch the predict program.\nRecap :\n")
 cat(α, " (learning ratio)\n")
 cat(i, " (iterations)\n")
-cat("values of Θs parameters : \n")
-Θ0
-Θ1
+cat("values of Θs parameters : ", c(Θ0, Θ1), "\n")
 message("Press Return To Continue")
 invisible(readLines("stdin", n=1))
